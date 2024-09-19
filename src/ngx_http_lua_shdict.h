@@ -58,10 +58,10 @@ typedef struct {
 #if (NGX_DARWIN)
 typedef struct {
     void                  *zone;
-    const unsigned char   *key;
+    u_char                *key;
     size_t                 key_len;
     int                   *value_type;
-    unsigned char        **str_value_buf;
+    u_char               **str_value_buf;
     size_t                *str_value_len;
     double                *num_value;
     int                   *user_flags;
@@ -74,10 +74,10 @@ typedef struct {
 typedef struct {
     void                  *zone;
     int                    op;
-    const unsigned char   *key;
+    u_char                *key;
     size_t                 key_len;
     int                    value_type;
-    const unsigned char   *str_value_buf;
+    u_char                *str_value_buf;
     size_t                 str_value_len;
     double                 num_value;
     long                   exptime;
@@ -89,7 +89,7 @@ typedef struct {
 
 typedef struct {
     void                  *zone;
-    const unsigned char   *key;
+    u_char                *key;
     size_t                 key_len;
     double                *num_value;
     char                 **errmsg;

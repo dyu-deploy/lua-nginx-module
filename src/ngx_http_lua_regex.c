@@ -219,7 +219,7 @@ ngx_http_lua_ffi_set_jit_stack_size(int size, u_char *errstr,
 
 
 ngx_http_lua_regex_t *
-ngx_http_lua_ffi_compile_regex(const unsigned char *pat, size_t pat_len,
+ngx_http_lua_ffi_compile_regex(const u_char *pat, size_t pat_len,
     int flags, int pcre_opts, u_char *errstr,
     size_t errstr_size)
 {
@@ -523,7 +523,7 @@ ngx_http_lua_ffi_create_script_engine(void)
 
 void
 ngx_http_lua_ffi_init_script_engine(ngx_http_lua_script_engine_t *e,
-    const unsigned char *subj, ngx_http_lua_regex_t *compiled, int count)
+    const u_char *subj, ngx_http_lua_regex_t *compiled, int count)
 {
     e->log = ngx_cycle->log;
     e->ncaptures = count * 2;

@@ -541,7 +541,7 @@ ngx_http_lua_ffi_ssl_get_client_hello_server_name(ngx_http_request_t *r,
 {
     ngx_ssl_conn_t          *ssl_conn;
 #ifdef SSL_ERROR_WANT_CLIENT_HELLO_CB
-    const unsigned char     *p;
+    const u_char            *p;
     size_t                   remaining, len;
 #endif
 
@@ -622,7 +622,7 @@ ngx_http_lua_ffi_ssl_get_client_hello_server_name(ngx_http_request_t *r,
 
 int
 ngx_http_lua_ffi_ssl_get_client_hello_ext(ngx_http_request_t *r,
-    unsigned int type, const unsigned char **out, size_t *outlen, char **err)
+    unsigned int type, const u_char **out, size_t *outlen, char **err)
 {
     ngx_ssl_conn_t          *ssl_conn;
 

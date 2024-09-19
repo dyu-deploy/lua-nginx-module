@@ -568,7 +568,7 @@ ngx_http_lua_ssl_sess_fetch_by_chunk(lua_State *L, ngx_http_request_t *r)
 /* de-serialized a SSL session and set it back to the request at lua context */
 int
 ngx_http_lua_ffi_ssl_set_serialized_session(ngx_http_request_t *r,
-    const unsigned char *data, int len, char **err)
+    const u_char *data, int len, char **err)
 {
     u_char                          *p;
     u_char                           buf[NGX_SSL_MAX_SESSION_SIZE];
@@ -593,7 +593,7 @@ ngx_http_lua_ffi_ssl_set_serialized_session(ngx_http_request_t *r,
 
     ngx_memcpy(buf, data, len);
     p = buf;
-    session = d2i_SSL_SESSION(NULL, (const unsigned char **)&p,  len);
+    session = d2i_SSL_SESSION(NULL, (const u_char **)&p,  len);
     if (session == NULL) {
         ERR_clear_error();
         *err = "failed to de-serialize session";

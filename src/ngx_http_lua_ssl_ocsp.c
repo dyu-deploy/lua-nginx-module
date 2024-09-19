@@ -24,7 +24,7 @@ static int ngx_http_lua_ssl_empty_status_callback(ngx_ssl_conn_t *ssl_conn,
 
 int
 ngx_http_lua_ffi_ssl_get_ocsp_responder_from_der_chain(
-    const char *chain_data, size_t chain_len, unsigned char *out,
+    const char *chain_data, size_t chain_len, u_char *out,
     size_t *out_size, char **err)
 {
 #ifndef NGX_HTTP_LUA_USE_OCSP
@@ -147,7 +147,7 @@ done:
 
 int
 ngx_http_lua_ffi_ssl_create_ocsp_request(const char *chain_data,
-    size_t chain_len, unsigned char *out, size_t *out_size, char **err)
+    size_t chain_len, u_char *out, size_t *out_size, char **err)
 {
 #ifndef NGX_HTTP_LUA_USE_OCSP
 

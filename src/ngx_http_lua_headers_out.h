@@ -15,10 +15,10 @@
 #if (NGX_DARWIN)
 typedef struct {
     ngx_http_request_t   *r;
-    const char           *key_data;
+    const u_char         *key_data;
     size_t                key_len;
     int                   is_nil;
-    const char           *sval;
+    const u_char         *sval;
     size_t                sval_len;
     void                 *mvals;
     size_t                mvals_len;
